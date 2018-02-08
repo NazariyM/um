@@ -1,0 +1,67 @@
+extends ../extend/default
+
+block variables
+	-title = 'Contacts';
+	-map = true;
+	-chartScript = false;
+
+block main
+	main.content
+
+		-page = {title: 'Contacts'}
+		include ../components/page
+
+		+b.SECTION.contacts
+			+e.container.container
+				+e.inner
+					+e.map#map
+
+					+e.block(style='background-image: url(static/img/bg/contact-block_bg.jpg)')
+						+e.block-title Адрес
+						+e.P Armiston Investments, Tornimae 7 Floor 12 Tallinn, Estonia, 10145
+
+						+e.P Registry code: 12019312
+
+						+e.P Founded: 15.11.2010
+
+				+b.photos.js-photos-slider
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-1.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-2.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-3.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-1.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-2.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-3.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-1.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+					+e.item
+						+e.A.item-img(data-fancybox='photos' href='https://cdn.freshome.com/wp-content/uploads/2016/11/freshome-nordic-scandinavian4.png')
+							+e.IMG(src='static/img/content/photos-2.jpg' alt='image')
+							.icon-plus.icon-plus_lg
+
+		+b.DIV.collage
+			+e.IMG(src='static/img/bg/contacts-collage.jpg' alt='image')
+
+		include ../components/support-btn
+
+block modals
+	include ../components/entry

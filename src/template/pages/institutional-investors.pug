@@ -1,0 +1,22 @@
+extends ../extend/default
+
+block variables
+	-title = 'Institutional investors';
+
+block main
+	main.content
+
+		-page = {title: 'Institutional investors'}
+		include ../components/page
+
+		-chart = {classMod: '_entry-page'}
+		include ../components/chart
+
+		include ../components/system
+
+		include ../components/tezis
+
+		include ../components/support-btn
+
+block modals
+	include ../components/entry

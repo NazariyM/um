@@ -1,0 +1,1074 @@
+.screen
+  position: relative
+  min-height: 623px
+  margin-top: 135px
+  background: url("../img/bg/screen_bg.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: 50% 50%
+  @media screen and (min-width: 1921px)
+    background: url("../img/bg/screen_bg.jpg") no-repeat 50% 50%/contain, url("../img/bg/screen_bg.jpg") repeat-x 0 50%/contain
+  &__container
+    padding: 90px 15px
+  &__inner
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    padding: 28px 116px 28px 24px
+    border-left: 1px solid #fff
+  &__text
+    max-width: 786px
+    padding-right: 20px
+  &__title
+    max-width: 560px
+    margin-bottom: 20px
+    color: $blue
+    font-size: 30px
+    line-height: 35px
+  &__descr
+    margin-bottom: 25px
+    color: #fff
+    font-size: 18px
+    line-height: 24px
+  &__action
+    position: relative
+    margin-top: -8px
+    &-btn
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      width: 172px
+      height: 172px
+      border-radius: 50%
+      border: 13px solid rgba(#fff, .11)
+      background: rgba(255, 255, 255, 0.1)
+      .no-touch &:hover::after
+        background: rgba(255, 255, 255, 0.6)
+      .no-touch &:hover .screen__action-icon use
+        fill: $blue
+      &::after
+        +coverdiv
+        border: 2px solid rgba(255, 255, 255, 0.55)
+        content: ''
+        background: rgba(#fff, .7)
+        border-radius: 50%
+        pointer-events: none
+        +trs
+    &-icon
+      position: relative
+      z-index: 2
+      use
+        +trs
+    &-tooltip
+      position: absolute
+      top: -66px
+      left: 90%
+      padding: 0 20px
+      height: 31px
+      line-height: 30px
+      white-space: nowrap
+      background: $blue
+      text-align: center
+      p
+        font-size: 21px
+        color: #fff
+      &-icon
+        position: absolute
+        top: -8px
+        left: 0
+      
+.chart
+  position: relative
+  max-width: 1140px
+  margin: -180px auto 0
+  background: #fff
+  border: 1px solid #d8d8d8
+  &_entry-page
+    margin: -170px auto 0
+  &__inner
+    +clr
+  &__block
+    float: left
+    width: calc(100% - 387px)
+    padding: 19px 29px 19px 19px
+  &__tezis
+    display: none
+    position: relative
+    float: left
+    width: 367px
+    margin: 19px 0 19px 0
+    &.slick-initialized
+      display: block
+    &-bg
+      +coverdiv
+      +cover
+      z-index: -1
+    &-dots
+      position: absolute
+      left: 0
+      right: 0
+      text-align: center
+      bottom: 15px
+      font-size: 0
+      li
+        display: inline-block
+        vertical-align: middle
+        margin: 0 6px
+        &.slick-active button
+          background: $blue
+      button
+        width: 25px
+        height: 1px
+        background: #fff
+        transition: .5s ease
+    &-item
+      position: relative
+      z-index: 1
+      height: 319px
+      padding: 45px 60px 60px
+      +vertical
+      p
+        display: inline-block
+        vertical-align: middle
+        line-height: 30px
+        font-size: 24px
+        color: #fff
+        
+.highcharts-container
+  +gpu
+.highcharts-title
+  +f('os-400')
+  font-size: 18px
+  color: #191919
+  
+.info
+  position: relative
+  padding: 75px 0 78px
+  background: url('../img/bg/info_bg-stroke.svg'), url('../img/bg/info_bg-fill.svg')
+  background-position: 50% -37%
+  background-repeat: no-repeat
+  background-size: 1940px 400px
+  @media screen and (min-width: 1921px)
+    background-position: 50% 0
+    background-size: 2600px 400px
+  &::after
+    pointer-events: none
+    position: absolute
+    z-index: 0
+    bottom: -20px
+    left: 0
+    right: 0
+    height: 220px
+    background: #f7fcff
+    content: ''
+    @media screen and (min-width: 1921px)
+      bottom: -91px
+  &__container
+    position: relative
+    z-index: 1
+    display: flex
+  &__col
+    &:nth-child(1)
+      flex: 1 0 percentage(540/1140)
+      padding-right: 42px
+      border-right: 1px solid #c6c6c6
+    &:nth-child(2)
+      flex: 1 0 percentage(600/1140)
+      padding-left: 29px
+  &__title
+    margin-top: -4px
+    margin-bottom: 18px
+    max-width: 370px
+    font-size: 24px
+    line-height: 28px
+    span
+      color: $blue
+  &__descr
+    margin-bottom: 30px
+  &__text
+    padding: 11px 21px
+    border: 1px dashed #aeaeae
+    &:nth-child(1n)
+      width: 504px
+      float: left
+    &:nth-child(2n)
+      width: 521px
+      float: right
+    &:not(:last-child)
+      margin-bottom: 22px
+  &__bg-bar
+    position: absolute
+    &_l
+      top: -43.5%
+      left: -25.1%
+      @media screen and (min-width: 1921px)
+        left: -45%
+    &_r
+      top: -55.5%
+      right: -38.8%
+      height: 201px
+      @media screen and (min-width: 1921px)
+        right: -43.8%
+  &__bg
+    position: absolute
+    left: 0
+    right: 0
+    bottom: -2px
+    z-index: -1
+    &_top
+      bottom: 40.3%
+      fill: #dceefd
+    &_bottom
+      fill: #f7fcff
+      bottom: 39.2%
+  &__dot-bg
+    position: absolute
+    &_1
+      top: 23.8%
+      left: -117px
+      @media screen and (min-width: 1921px)
+        top: 34.8%
+        left: -367px
+    &_2
+      top: 48.6%
+      left: 538px
+    &_3
+      top: -2.7%
+      right: -197px
+      @media screen and (min-width: 1921px)
+        top: -1.7%
+        right: -450px
+        
+.system
+  padding: 22px 0 48px
+  min-height: 736px
+  &__container
+    position: relative
+    font-size: 0
+    text-align: center
+  &__item
+    position: relative
+    display: inline-block
+    vertical-align: top
+    width: 33.33333%
+    text-align: center
+    &.is-visible
+      z-index: 310
+    &.js-system-popup
+      cursor: pointer
+    &-title
+      position: relative
+      margin-bottom: 25px
+      color: #191919
+      +f('os-700')
+      font-size: 16px
+      line-height: 22px
+      transition: .5s ease
+      
+    &-img
+      position: relative
+      img
+        position: relative
+    &_data
+      img
+        top: -6px
+        left: 19px
+      .system__item-title
+        left: 12px
+    &_cloud
+      img
+        position: absolute
+        min-width: 501px
+        top: 1px
+        left: -85px
+      .system__item-title
+        left: -5px
+    &_portfolio
+      img
+        position: absolute
+        min-width: 428px
+        top: -5px
+        left: -65px
+      .system__item-title
+        left: -22px
+        
+    &_internet
+      margin-top: 118px
+      img
+        position: absolute
+        left: 35px
+        
+  &__arrows
+    position: absolute
+    top: 28.7%
+    z-index: 307
+    fill: #98acba
+    &_1
+      left: 32.7%
+    &_2
+      left: 63.5%
+    &_3
+      top: 74%
+      left: 48.2%
+      transform: rotate(90deg)
+    
+.popup-opened
+  .system__item
+    pointer-events: none
+  .system__item-title
+    color: #fff
+    
+.system-slider
+  max-width: 730px
+  margin: 0 auto
+  display: none
+  &.slick-initialized
+    display: block
+  .slider-arr
+    top: 66%
+    margin-top: -13px
+    z-index: 3
+    &:hover svg
+      fill: $blue
+    &_prev
+      left: 17.5%
+    &_next
+      right: 17.5%
+    svg
+      fill: #fff
+      +trs
+    &.slick-disabled svg
+      fill: #fff
+  &__item
+    pointer-events: none
+    text-align: center
+    transition: all 0.3s ease-in-out
+    cursor: pointer
+    z-index: 3
+    transform: scale(0.74) translate(90%, 0)
+    +md
+      padding: 30px
+    +xs
+      transform: none
+      padding: 25px 15px
+    &.slick-current
+      pointer-events: auto
+      .no-touch &:hover .system-slider__item-img::before
+        opacity: 1
+    &-img
+      display: block
+      position: relative
+      border: 10px solid #fff
+      border-radius: 50%
+      overflow: hidden
+      width: 228px
+      height: 228px
+      margin: 0 auto
+      +cover
+      +cover-img
+      &::after
+        position: absolute
+        top: 0
+        left: 0
+        width: 1px
+        height: 100px
+        background: #fff
+        z-index: 1
+        content: ''
+      &::before
+        +coverdiv
+        background: rgba(#005672, .4)
+        content: ''
+        opacity: 0
+        transition: opacity .3s ease
+  
+  .slick-track
+    display: flex
+    align-items: center
+  .slick-list
+    position: relative
+    display: flex
+    flex-direction: column
+    justify-content: flex-end
+    height: 330px
+  &__item.slick-center
+    transform: scale(1) translate3d(0, 0, 0)
+    cursor: default
+  &__item.slick-center
+    z-index: 3
+  &__item.slick-center + &__item
+    transform: scale(0.74) translate(-90%, 0)
+    z-index: 2
+    +xs
+      transform: none
+  &__tooltip
+    pointer-events: none
+    opacity: 0
+    position: absolute
+    top: -44%
+    left: 66%
+    width: 300px
+    z-index: 105
+    padding: 5px 0
+    font-size: 16px
+    text-align: left
+    color: #fff
+    transition: opacity .3s ease
+    &::after
+      position: absolute
+      top: 0
+      left: 7px
+      height: 1px
+      width: 97%
+      background: #fff
+      content: ''
+    &-title
+      +f('os-600')
+    svg
+      position: absolute
+      top: 100%
+      left: -12px
+    
+  &__item.slick-current
+    .no-touch &:hover .icon-plus
+      opacity: 1
+    
+  &__item.slick-current &__tooltip
+    opacity: 1
+    
+.tezis
+  padding: 145px 0 150px
+  background: url("../img/bg/map_bg.svg") 50% 50% no-repeat
+  border-top: 1px solid #ededed
+  &__container
+  &__row
+    display: flex
+    padding-left: 47px
+    &:not(:first-child)
+      padding-top: 72px
+  &__item
+    display: flex
+    align-items: center
+    &_right
+      flex: 0 1 500px
+      margin-left: auto
+      .tezis__item-icon::after
+        width: 246px
+        height: 118px
+        top: 61px
+        right: 28px
+    &_center
+      flex: 0 1 560px
+      margin-left: auto
+      margin-right: auto
+      .tezis__item-icon::after
+        width: 252px
+        height: 121px
+        top: 60px
+        right: 30px
+    &_left
+      flex: 0 1 550px
+      margin-right: auto
+      .tezis__item-icon
+        position: relative
+        left: 2px
+      .tezis__item-icon::after
+        display: none
+    &-inner
+      display: flex
+    &-icon
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: center
+      flex-shrink: 0
+      width: 68px
+      height: 66px
+      background: url("../img/icons/tezis-circle.svg") 50% 50% / contain no-repeat
+      &::after
+        position: absolute
+        z-index: 1
+        background: url("../img/bg/tezis-dots.svg") 100% 100%/cover no-repeat
+        content: ''
+      .icon-data
+        position: relative
+        top: 2px
+    &-text
+      padding-right: 30px
+      text-align: right
+      p
+        color: #191919
+        +f('os-700', 18, 22)
+      span
+        color: $blue
+        
+.page
+  margin-top: 135px
+  padding: 80px 0 0
+  min-height: 374px
+  +cover
+  &__title
+    color: #fff
+    font-size: 30px
+    line-height: 45px
+  
+.schedule
+  padding: 87px 0 50px
+  &__container
+    position: relative
+    max-width: 1710px
+    padding: 0 40px
+    &::after
+      pointer-events: none
+      position: absolute
+      top: 4%
+      right: 10%
+      background: url("../img/bg/map_bg.svg") no-repeat 50% 50% / contain
+      height: 64.8%
+      width: 80.7%
+      content: ''
+    &::before
+      position: absolute
+      bottom: 3.1%
+      left: 43.1%
+      opacity: .07
+      width: 27.8%
+      height: 19%
+      background: url("../img/bg/people_bg.png") no-repeat 50% 50% / contain
+      content: ''
+  &__grid-bg
+    pointer-events: none
+    position: absolute
+    top: -20px
+    left: 15px
+    right: 68px
+    height: 100%
+    background: url("../img/bg/schedule-grid.svg") no-repeat 50% 50% / contain
+  &__inner
+    position: relative
+    max-width: 1140px
+    margin: 0 auto
+  &__row
+    display: flex
+    justify-content: flex-end
+    padding-bottom: 100px
+  &__row:nth-child(2)
+    padding-right: 195px
+  &__row:nth-child(3)
+    justify-content: center
+    padding-right: 10px
+    padding-bottom: 105px
+  &__row:nth-child(4)
+    justify-content: flex-start
+    padding-left: 187px
+  &__row:nth-child(5)
+    justify-content: flex-start
+  &__row:nth-child(5) &__item
+    flex: 0 0 334px
+  &__row:nth-child(5) &__item::after
+    display: none
+  &__item
+    position: relative
+    flex: 0 0 350px
+    padding: 0 10px
+    text-align: right
+    &::after
+      position: absolute
+      bottom: -146px
+      right: 36px
+      width: 214px
+      opacity: .15
+      height: 134px
+      background: url("../img/bg/curved-line.svg") no-repeat 50% 50%
+      content: ''
+    &-icon
+      position: relative
+      width: 55px
+      height: 55px
+      margin-right: 90px
+      margin-left: auto
+      border-radius: 50%
+      cursor: pointer
+      border: 7px solid transparent
+      +trs
+      &::before
+        opacity: 0
+        +coverdiv
+        border-radius: 50%
+        background: $blue
+        z-index: 407
+        content: ''
+        +trs
+      &::after
+        +coverdiv
+        border-radius: 50%
+        z-index: -1
+        background: $blue
+        content: ''
+      &:hover
+        border-color: rgba(204, 204, 204, 0.47)
+      &:hover + .schedule__item-tooltip
+        visibility: visible
+        opacity: 1
+        transform: translateY(0)
+      &.is-active
+        &::before
+          opacity: 1
+      &.is-active
+        .pulse-anim
+          animation-play-state: paused
+      .icon-plus
+        z-index: 408
+    &-tooltip
+      pointer-events: none
+      visibility: hidden
+      opacity: 0
+      position: absolute
+      bottom: calc(100% + 17px)
+      left: calc(50% - 168px)
+      z-index: 403
+      width: 430px
+      padding: 15px 20px
+      background: #fff
+      border: 1px solid #cbcbcb
+      transition: .3s ease
+      text-align: left
+      transform: translateY(-20px)
+      &::before, &::after
+        position: absolute
+        left: 50%
+        margin-left: -5px
+        content: ''
+      &::after
+        bottom: -6px
+        margin-left: -5px
+        +arr(10, 7, #fff, b)
+        content: ''
+      &::before
+        bottom: -7px
+        +arr(10, 7, #cacaca, b)
+        content: ''
+      p
+        line-height: 20px
+    &-text
+      margin-top: 5px
+      color: #001b30
+      +f('os-700', 20)
+      
+  &__earn
+    position: absolute
+    right: 1px
+    bottom: 24.6%
+    &-btn
+    &-icon
+      position: absolute
+      z-index: 1
+      bottom: -80px
+      left: 50%
+      margin-left: -18px
+      animation: scaleAnim 3s ease infinite
+      &::after
+        position: absolute
+        top: 64px
+        left: -11px
+        width: 78px
+        height: 22px
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAE4AAAAWCAYAAABud6qHAAAFF0lEQVRYR+2YyU4ySxiGqR7pCFGCaExMdOPCu/AmuB7C9XAT3oBbXbjRxMQoEjUMTfVQdfJ+p79OUcBPg3r+s7ATqKGrp6ffb2pR+912IiB2Our3oNrfAPfHa2qtN74WIVaeYvOBG89cfcFPghMMod/v03V6vV55Z4PBgOa63S7NXV9fi6urK4121e1jH88PBgPqdrtd3e/3y+W9Xo/WWGB/BOh3gCvPAVCABEAMptPplPubzSb1oyii9vHxkdqLi4va09MT9c/Pzxe4PTw80Pj09FTf399T/+zsrIQRxzH1x+MxtQXgcj/AAmgB89sg7gqOjrNBQT2sGEACoCAIBKAAyPPzM4193xee59E53t/fxeHhYe3j40O0220C8/n5Wd7X/v6+Ho1GtYODA/329lZrtVr08FmW6TRNqZ8kiT45OdGYQ9+ECZBQKKvTUuXOILcFR+ZnqophMSioCMDCMCRIURQ5gANQ+AVB4EwmE9FqtYTjOGI6nQrXdakPCHEcL9xTFEX0cEopnec59aMoUjzGXKPRUC8vLxpQGWi73VYmSChyFcRdlVgVXOmv4EJghmyCprKGw6HDsABjMplg7MRx7Pi+Tz8AklI6rutSP01Tp16v19CGYQj1LNxTEARaSkngwjDUs9lM+76vtNaApMIwVGmaKsBEC5BSStVsNgncdDpVUkpS4dHRkWKzHg6H2lThtgA3gVsySYCDOa4DNh6PAYCAeZ7nJEniAlKSJE6WZdQvoGEMeDRO01TwZjo5AMLY8zw1n881WoDL8xyqo9Z13Ryt7/uY1EEQ5ICYJAmOIYg2QFuB8DxGYNlowhvB2aYJpdnQ9vb2AInMMI5jFwqr1+suwKVp6vq+T/LK89wDrDzPsY/msBVzpNYsyxbuyfM8sKMNoAAOW5ZlOYDhV8wDVgkQ8EajkUILU4YS4zhWMOG7uztS31fM90/glswT/uzm5sbBm3l9fXUuLy/FaDRy4MdgmoAGeFJKF+oCODwrwGFjYGh5nOc5wRNC4CcwXqE47TgOzJOg4R0wMCFE5nleDpAMEwChPqgO4KC8KIqwn0y30+lAjWS+DA+K2yYCV1Ic+zUzEGwLDnAAkeEBHJSmlPrX2RXgAM9UXWGqJThAK0yU4GG8DhygzedzUhzg/efgzCi6jakiCARBQKYKHwfzBDiA0lqT2fLGakNrKw7wYLIkN5AugHEf4Gaz2YKvk1KS0gp4pZ9D2mKaqhkkcN2qOd8mxZG/rOLn7GiKoACzRSSFn4PZWoGBFAdQBTxE2IUAwb6N0xH2b9wiSBT+joIEm2cYhgTNVpoZXXc1UX6pVcCV8IqDKB2x8zeA43QECS6i6/Hx8VJKAhU2Gg0BBXJKAlpSSsrlkJLYipvP5zWkIkWAQD5HeVyRolAawikJA0MwsNMRVBzs1346HVl4iFXqW5UAo4QyISLicl6HtggkFFCazWbNToLtiwIQ5gDDTHyRu2EO1QUnwIiccPxQF8o0Owigiri9vdWGSVIRZF9z07iq4ladZ22Oh8V2JWGXXEVutlB2YQ6lF18MJdi6cgtrUHIBDPpshqaqMP+d1YIJ4Svgls7DvrBwsmTi+DPrVz6IC32MUaZBpdi42Od1UA36WxT4pCD+avJdtemS6W2S5Bf2r/xqwuezPyutuo75iYmVw+tQLhW+dh0kXrq1GVZ55u9SXJVrVXpp5ofMNR8szfP8CJQqD/M3wVW5v//tml9wO76afwDoOTRiPwJxLAAAAABJRU5ErkJggg==")
+        content: ''
+        
+.result
+  padding: 100px 0
+  &__container
+    position: relative
+    min-height: 1198px
+    &::after
+      position: absolute
+      top: 200px
+      left: -270px
+      z-index: -1
+      width: 1793px
+      height: 1196px
+      background: url("../img/bg/result_bg.png") no-repeat 65% 149%
+      content: ''
+  &__item
+    position: absolute
+    padding-left: 40px
+    width: 300px
+    &::after
+      pointer-events: none
+      position: absolute
+      top: -30px
+      left: -100px
+      content: ''
+      background-repeat: no-repeat
+      background-position: 50% 50%
+      background-size: contain
+    &_1
+      top: 1.7%
+      left: 28.3%
+      width: 330px
+      &::after
+        top: 61px
+        left: -12px
+        width: 166px
+        height: 273px
+        background-image: url("../img/bg/line-dot_1.png")
+    &_2
+      top: -3.4%
+      left: 57.1%
+      width: 400px
+      &::after
+        top: 61px
+        left: -12px
+        width: 166px
+        height: 301px
+        background-image: url("../img/bg/line-dot_2.png")
+      .result__value:nth-child(3) .result__value-circle
+        top: 9px
+    &_3
+      top: 14.2%
+      left: 3.8%
+      &::after
+        top: 39px
+        left: -14px
+        width: 166px
+        height: 306px
+        background-image: url("../img/bg/line-dot_3.png")
+      .result__title
+        margin-bottom: 45px
+    &_4
+      top: 31.4%
+      left: 23.5%
+      &::after
+        top: 38px
+        left: -68px
+        width: 278px
+        height: 306px
+        background-image: url("../img/bg/line-dot_3.png")
+      .result__title
+        margin-bottom: 43px
+        padding-left: 12px
+    &_5
+      top: 20.5%
+      left: 65.8%
+      &::after
+        top: 38px
+        left: -71px
+        width: 278px
+        height: 306px
+        background-image: url("../img/bg/line-dot_3.png")
+      .result__title
+        margin-bottom: 44px
+    &_6
+      width: 260px
+      top: 50.7%
+      left: 4.3%
+      &::after
+        top: 60px
+        left: -12px
+        width: 166px
+        height: 255px
+        background-image: url("../img/bg/line-dot_4.png")
+      .result__title
+        margin-bottom: 51px
+    &_7
+      top: 61%
+      left: 57.5%
+      &::after
+        top: 40px
+        left: -13px
+        width: 166px
+        height: 302px
+        background-image: url("../img/bg/line-dot_5.png")
+      .result__title
+        padding-left: 12px
+    
+  &__title
+    margin-bottom: 53px
+    +f('os-700')
+    font-size: 18px
+  &__value
+    display: flex
+    align-items: center
+    &:not(:last-child)
+      margin-bottom: 22px
+    &-label
+      margin-bottom: 5px
+      color: #b2b1b1
+      font-size: 13px
+      line-height: 1
+      +f('os-700')
+    &-block + &-block
+      margin-top: 20px
+    &-circle
+      display: flex
+      align-items: center
+      justify-content: center
+      position: relative
+      height: 61px
+      width: 61px
+      margin-right: 17px
+      border-radius: 50%
+      background: #ffff
+      border: 7px solid $blue
+      z-index: 2
+      &::after
+        position: absolute
+        top: 50%
+        margin-top: -6px
+        right: -12px
+        z-index: -1
+        +arr(6, 12, #026db5, r)
+        content: ''
+    &-text
+      color: #026db5
+      +f('os-700', 46, 45)
+    &_triple
+      position: relative
+      &::after
+        position: absolute
+        left: 30px
+        top: 45px
+        background: url("../img/bg/line-triple.png") no-repeat 50% 50% / contain
+        width: 73px
+        height: 166px
+        z-index: 1
+        content: ''
+      .result__value-circle::after
+        display: none
+      .result__value-circle
+        top: 8px
+        margin-right: 26px
+        
+.entry
+  min-height: 490px
+  background: #fff
+  +clr
+  &__pic
+    position: relative
+    float: left
+    width: 50%
+    padding: 70px 20px 200px
+    text-align: center
+    min-height: 490px
+    &-text
+      margin-bottom: 30px
+    &-title
+      margin-bottom: 7px
+      color: #fafdff
+      +f('ae-700', 78)
+      font-weight: 700
+      line-height: 1
+      font-size: 78px
+    &-sub-title
+      color: #fff
+      +f('ae-400')
+      font-size: 20px
+    &-icon
+      position: absolute
+      left: 50%
+      bottom: 39px
+      margin-left: -47px
+  &__content
+    float: left
+    width: 50%
+  &__nav
+    display: flex
+    &-btn
+      flex: 1 1 50%
+      padding: 0 15px
+      text-transform: uppercase
+      font-size: 16px
+      height: 47px
+      line-height: 47px
+      background-color: #f2f2f2
+      text-align: center
+      +trs
+      &:nth-child(1)
+        pointer-events: none
+      &.is-active
+        background: #0094f8
+        color: #fff
+  &__form
+    padding: 30px 35px 35px
+    color: #acacac
+    font-size: 14px
+    line-height: 20px
+    &-text
+    &-title
+      margin-bottom: 10px
+      font-size: 18px
+      color: #181818
+      &-color
+        color: #0094f8
+    &-descr
+      max-width: 240px
+      margin: 0 auto 30px
+    &-field
+      position: relative
+      &:nth-child(3)
+        margin-top: -1px
+      &-icon
+        position: absolute
+        top: 50%
+        z-index: 2
+        margin-top: -9px
+        &_user
+          left: 14px
+        &_key
+          left: 16px
+    &-input
+      position: relative
+      padding: 0 20px 0 40px
+      &:focus
+        z-index: 1
+        border-color: $blue
+      &:focus + svg use
+        fill: $blue
+    &-btn
+      margin-top: 20px
+      width: 100%
+    &-options
+      display: flex
+      justify-content: space-between
+      margin: 20px 0 0
+    &-check
+      flex-shrink: 0
+      white-space: nowrap
+    &-link
+      +trs
+      .no-touch &:hover
+        color: $blue
+    &-sign
+      margin: 20px 0 0
+      &-title
+        position: relative
+        margin-bottom: 17px
+        &::after
+          position: absolute
+          top: calc(50% + 1px)
+          left: 0
+          right: 0
+          height: 1px
+          background-color: #cdcdcd
+          content: ''
+        span
+          position: relative
+          z-index: 1
+          padding: 0 10px
+          background: #fff
+      &-buttons
+        display: flex
+        margin: 0 -2px
+      &-btn
+        position: relative
+        height: 32px
+        margin: 0 2px
+        line-height: 32px
+        color: #fff
+        font-size: 14px
+        +trs
+        &_fb
+          flex: 1 0 140px
+          background-color: #4d67a3
+          .no-touch &:hover
+            background: darken(#4d67a3, 10)
+          span
+            padding-left: 30px
+          .entry__form-sign-icon
+            top: 4px
+            left: 2px
+            &::after
+              right: -3px
+              top: 4px
+          svg
+            width: 28px
+            height: 18px
+        &_gp
+          flex: 1 0 144px
+          background-color: #d74936
+          .no-touch &:hover
+            background: darken(#d74936, 10)
+          span
+            padding-left: 40px
+          .entry__form-sign-icon
+            top: 3px
+            left: 7px
+            &::after
+              right: -7px
+              top: 5px
+          svg
+            width: 25px
+            height: 16px
+      &-icon
+        position: absolute
+        width: 30px
+        &::after
+          position: absolute
+          z-index: 1
+          right: 0
+          height: 16px
+          width: 1px
+          background: rgba(#fff, .5)
+          content: ''
+          
+.contacts
+  margin-top: -176px
+  padding-bottom: 100px
+  border-bottom: 1px solid #d8d8d8
+  &__inner
+    display: flex
+    margin-bottom: 35px
+    padding: 18px 21px
+    min-height: 326px
+    background: #fff
+    border: 1px solid #d8d8d8
+  &__map
+    flex: 1 0 auto
+    margin-right: 23px
+  &__block
+    flex: 0 1 367px
+    padding: 29px
+    +cover
+    color: #fff
+    &-title
+      margin-bottom: 20px
+      font-size: 24px
+      line-height: 24px
+    P
+      &:not(:last-child)
+        margin-bottom: 20px
+        
+.photos
+  display: none
+  max-width: 1078px
+  margin: 0 auto
+  &.slick-initialized
+    display: block
+  &__item
+    position: relative
+    margin: 0 2px
+    &-img
+      position: relative
+      display: block
+      +cover-img
+      &::after
+        opacity: 0
+        +coverdiv
+        background-color: rgba(0, 30, 54, 0.55)
+        content: ''
+        +trs
+      img
+        margin: 0 auto
+      &:hover::after
+        opacity: 1
+      &:hover .icon-plus
+        opacity: 1
+        
+.collage
+  padding: 50px 0
+  img
+    display: block
+    width: 100%
+    margin: 0 auto

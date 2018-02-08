@@ -1,0 +1,357 @@
+// basic styles
+body
+  min-width: 1900px
+  +f('os-400', 16, 24)
+  color: $gray
+  -webkit-font-smoothing: subpixel-antialiased
+  -moz-osx-font-smoothing: grayscale
+  &::after
+    pointer-events: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    content: ''
+    background: rgba(#191919, .44)
+    z-index: 330
+    opacity: 0
+    transition: .3s ease
+  &.is-shadow
+    &::after
+      opacity: 1
+
+.out
+  overflow: hidden
+
+.container
+  max-width: 1170px
+  min-width: 1170px
+  margin: 0 auto
+  padding: 0 15px
+  +xs
+    padding: 0 10px
+
+// buttons
+.btn
+  display: inline-block
+  vertical-align: top
+  border: 1px solid #0094f8
+  +f('os-400', 16, 23)
+  text-align: center
+  +trs
+  &_transp
+    padding: 8px 22px
+    background: transparent
+    color: $blue
+    .no-touch &:hover
+      background: #0094f8
+      color: #fff
+  &_blue
+    padding: 9px 27px
+    background-color: #0094f8
+    color: #fff
+    .no-touch &:hover
+      background: darken($blue, 12)
+      border-color: darken($blue, 12)
+  &_border
+    position: relative
+    height: 55px
+    padding: 15px 30px
+    border: 1px solid #0094f8
+    background-color: #0094f8
+    line-height: 21px
+    font-size: 24px
+    color: #fff
+    .no-touch &:hover::before
+      background: darken($blue, 10)
+    &::after
+      +coverdiv
+      z-index: 1
+      background: #fff
+      content: ''
+    &::before
+      position: absolute
+      z-index: 2
+      top: 5px
+      left: 5px
+      right: 5px
+      bottom: 5px
+      background: #0094f8
+      content: ''
+      +trs
+    span
+      position: relative
+      z-index: 2
+
+.title-xs
+  +f('os-600', 16, 23)
+  text-transform: uppercase
+  color: #fff
+
+//input.btn
+//	+trs
+//	.no-touch &:hover
+//		box-shadow: 0 0 10px rgba($black, .4)
+
+.input
+  width: 100%
+  height: 43px
+  padding: 0 14px
+  +f('os-400', 14)
+  color: $black
+  border: 1px solid #d1d1d1
+  background-color: #fafafa
+  +placeholder-color(#acacac)
+
+.check-box
+  position: relative
+  &:hover span
+    color: $blue
+  label
+    display: block
+    cursor: pointer
+    color: #616262
+    font-size: 0
+    text-align: left
+    span
+      display: inline-block
+      vertical-align: middle
+      width: calc(100% - 14px)
+      padding-left: 9px
+      font-size: 14px
+      user-select: none
+      +trs
+  &__square
+    position: relative
+    display: inline-block
+    vertical-align: middle
+    width: 14px
+    height: 14px
+    border: 1px solid #d1d1d1
+    background: $white
+    font-size: 0
+    &::after
+      position: absolute
+      width: 6px
+      height: 6px
+      top: 50%
+      left: 50%
+      margin-top: -3px
+      margin-left: -3px
+      background-color: $blue
+      content: ''
+      opacity: 0
+      transform: scale(.5)
+      +trs
+  
+  input
+    display: none
+    &:checked + label .check-box__square::after
+      opacity: 1
+      transform: scale(1)
+
+//.slider-btn
+//	position: absolute
+//	top: 50%
+//	font-size: 0
+//	z-index: 1
+//	.no-touch &:hover .icon
+//		fill: $white
+//	.no-touch &:active .icon
+//		transform: scale(.8)
+//	.icon
+//		font-size: 75px
+//		fill: rgba($white, .7)
+//		+trs
+//		+lg
+//			font-size: 55px
+//	&_prev
+//		left: 4%
+//	&_next
+//		right: 4%
+//
+//.slider-dots
+//	position: absolute
+//	left: 0
+//	right: 0
+//	bottom: 55px
+//	z-index: 1
+//	text-align: center
+//	font-size: 0
+//	li
+//		display: inline-block
+//		width: 20px
+//		height: 20px
+//		background: rgba($white, .5)
+//		border-radius: 50%
+//		cursor: pointer
+//		transition: transform .3s ease
+//		&:not(:first-child)
+//			margin-left: 15px
+//		&.slick-active
+//			background: #207bd2
+//			transform: scale(1.5)
+//		button
+//			+hide-text
+
+.support-btn
+  position: fixed
+  right: 48px
+  bottom: 60px
+  z-index: 1
+  width: 100px
+  height: 100px
+  border: 8px solid #fff
+  border-radius: 50%
+  background: rgba($blue, .11)
+  +trs
+  .no-touch &:hover
+    background: darken(#dff0fe, 15)
+  &::after
+    position: absolute
+    z-index: -1
+    top: -8px
+    left: -8px
+    right: -8px
+    bottom: -8px
+    border: 1px solid rgba(#0094f8, .32)
+    border-radius: 50%
+    content: ''
+  &__dots
+    position: absolute
+    top: 54%
+    left: 40px
+    display: flex
+    justify-content: space-between
+    width: 17px
+    &-circle
+      width: 3px
+      height: 3px
+      background: #fff
+      border-radius: 50%
+      z-index: 1
+
+.arrow-link
+  color: $blue
+  line-height: 1
+  .no-touch &:hover .arrow-link__icon
+    transform: translateX(5px)
+  span
+    margin-right: 4px
+  &__icon
+    vertical-align: 1px
+    transition: .3s ease
+
+.icon-plus
+  +vcenter
+  width: 24px
+  height: 24px
+  opacity: 0
+  transition: opacity .3s ease
+  &::after
+    height: 1px
+    width: 100%
+    top: 50%
+    margin-top: -1px
+    left: 0
+  &::before
+    height: 100%
+    width: 1px
+    left: 50%
+  &::after, &::before
+    +gpu
+    position: absolute
+    background: #fff
+    content: ''
+    z-index: 2
+  &_close
+    opacity: 1
+    width: 15px
+    height: 15px
+    &::after
+      top: 50%
+      left: 0
+      margin-top: -1px
+      transform: rotate(-45deg)
+    &::before
+      transform: rotate(45deg)
+      height: 1px
+      width: 100%
+      top: 50%
+      left: 0
+      margin-top: -1px
+  &_sm
+    width: 11px
+    height: 11px
+    opacity: 1
+    &::before
+      left: 5px
+  &_lg
+    height: 34px
+    width: 34px
+    z-index: 1
+    &::before, &::after
+      background: rgba(#fff, .5)
+      
+.slider-arr
+  position: absolute
+  top: 50%
+  margin-top: -13px
+  z-index: 1
+  &:hover svg
+    fill: $blue
+  &_prev
+    left: -30px
+  &_next
+    right: -30px
+  svg
+    fill: #000
+    +trs
+  &.slick-disabled svg
+    fill: #000
+    
+.pulse-anim
+  background-color: $blue
+  border-radius: 100%
+  position: absolute
+  top: 50%
+  left: 50%
+  margin-top: -20px
+  margin-left: -20px
+  width: 40px
+  height: 40px
+  opacity: .75
+  &:after
+    content: ''
+    position: absolute
+    left: 50%
+    bottom: 0
+    top: 0
+    background-color: $blue
+    border-radius: 100%
+    -webkit-animation: pulse 2s infinite ease-in-out
+    animation: pulse 2s infinite ease-in-out
+  &:before
+    content: ''
+    position: absolute
+    left: 50%
+    bottom: 0
+    top: 0
+    background-color: $blue
+    border-radius: 100%
+    -webkit-animation: pulse 2s infinite ease-in-out
+    animation: pulse 2s infinite ease-in-out
+    margin: auto 0 auto -32.5px
+    height: 65px
+    width: 65px
+    opacity: .5
+    -webkit-animation-delay: .6s
+    animation-delay: .6s
+  &:after
+    margin: auto 0 auto -46px
+    height: 92px
+    width: 92px
+    -webkit-animation-delay: .2s
+    animation-delay: .2s
+    opacity: .25

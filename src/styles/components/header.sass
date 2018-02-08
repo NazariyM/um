@@ -1,0 +1,174 @@
+.header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 310
+  min-width: 1900px
+  border-top: 4px solid $blue
+  background: #fff
+  box-shadow: 0 1px 0 #dee2ef
+  &.is-overlapped
+    z-index: 300
+  &__top
+    display: flex
+    justify-content: flex-end
+    align-items: center
+    padding: 15px 15px 13px
+  &__logo
+  &__bottom
+    padding: 20px 0
+    box-shadow: 0 -1px 0 #dee2ef
+    background: #fff
+    &-container
+      display: flex
+      align-items: center
+  &__nav
+    margin: 0 40px 0 auto
+  &__login
+    display: flex
+    align-items: center
+    color: $blue
+    +f('os-400', 16)
+    transition: .35s ease
+    &:hover
+      color: darken($blue, 25)
+    span
+      margin-left: 8px
+  &__lang
+    .lang__list
+      margin-top: 5px
+
+.lang
+  position: relative
+  display: flex
+  align-items: center
+  &__list
+    position: relative
+    +trs
+    &.is-active
+      .lang__list-items
+        opacity: 1
+        visibility: visible
+    &-items
+      position: absolute
+      right: 0
+      top: 41px
+      z-index: 1
+      visibility: hidden
+      opacity: 0
+      background: #fff
+      width: 190px
+      border: 1px solid #dee2ef
+      +trs
+      li
+        a
+          display: flex
+          align-items: center
+          height: 32px
+          padding: 0 10px
+          .no-touch &:hover
+            background: #e5e5e5
+          
+    &.is-active .lang__link::after
+      transform: rotate(180deg)
+    &-icon
+      width: 24px
+      height: 18px
+      margin-right: 10px
+      svg, img
+        width: 100%
+        height: 100%
+    &-text
+      font-size: 14px
+      color: #747474
+  &__link
+    position: relative
+    display: block
+    width: 42px
+    &::after
+      position: absolute
+      top: 50%
+      right: 0
+      margin-top: -4px
+      +arr(7, 4, #747474, b)
+      content: ''
+      +trs
+  &__translate
+    min-width: 174px
+    margin-right: 13px
+    border: 1px solid #dee2ef
+    .goog-te-gadget-simple
+      padding: 6px 7px
+      height: 38px
+      border: 0
+    .goog-te-gadget-icon
+      width: 18px
+    .goog-te-gadget-simple .goog-te-menu-value span:nth-child(3)
+      display: none
+    .goog-te-gadget-simple .goog-te-menu-value span[aria-hidden]
+      position: relative
+      top: -4px
+      left: -1px
+      font-size: 0
+      &::after
+        +arr(7, 4, #747474, b)
+        content: ''
+    .goog-te-gadget-simple .goog-te-menu-value span
+      vertical-align: -1px
+      color: #737373!important
+      +f('os-400', 16)
+    .goog-te-menu-value
+      margin-left: 6px
+    .goog-te-gadget-icon
+      margin-left: 4px
+      
+.logo
+  display: flex
+  align-items: center
+  .no-touch &:hover p,
+  .no-touch &:hover span
+    color: $blue
+  &__icon
+    margin-right: 13px
+  p
+    color: #000
+    +f('os-700', 20)
+    text-transform: uppercase
+    +trs
+  span
+    text-transform: none
+    +f('os-400', 15)
+    +trs
+    
+.nav
+  &__list
+    display: flex
+    margin: 0 -8px
+    li
+      position: relative
+      &::after
+        position: absolute
+        top: -21px
+        left: 0
+        z-index: 1
+        width: 100%
+        height: 1px
+        background: transparent
+        content: ''
+      &.is-active::after
+        background: $blue
+      &.is-active a
+        color: $blue
+      &:hover::after
+        background: $blue
+    a
+      display: block
+      padding: 0 8px
+      color: #747474
+      +trs
+      .no-touch &:hover
+        color: $blue
+        
+.goog-te-menu-frame
+  box-shadow: none!important

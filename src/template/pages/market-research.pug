@@ -1,0 +1,19 @@
+extends ../extend/default
+
+block variables
+	-title = 'Market research';
+
+block main
+
+	-page = {title: 'Market research'}
+	include ../components/page
+
+	-chart = {classMod: '_entry-page'}
+	include ../components/chart
+
+	include ../components/result
+
+	include ../components/support-btn
+
+block modals
+	include ../components/entry

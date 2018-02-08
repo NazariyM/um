@@ -1,0 +1,47 @@
+include ../bemto/index
+include ../partials/helpers
+
+- var suffix = production ? '.min' : '';
+
+doctype html
+html(lang='ru')
+
+	block variables
+		- var title = defaultPageTitle;
+
+	block head
+		head
+			meta(name='format-detection', content='telephone=no')
+			meta(charset='utf-8')
+			meta(http-equiv='X-UA-Compatible', content='IE=edge')
+			meta(name='viewport', content='width=device-width, initial-scale=1.0')
+			title= title
+			link(href='static/css/index' + suffix + '.css', rel='stylesheet')
+			link(rel='shortcut icon', type='image/png', href='static/favicon.ico')
+			link(rel='shortcut icon', href='static/favicon.ico', type='image/x-icon')
+
+
+	block body
+		body
+
+			div.out
+
+				block header
+					include ../components/_header
+
+				block main
+					main
+
+				block modals
+
+				block footer
+					include ../components/_footer
+
+			// Scripts
+			block scripts
+				if map === true
+					script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIOpQ4aGs5lMqw0kWRFDTw07_m8jgHt04")
+				script(src='static/js/index.jquery' + suffix + '.js')
+				script(src='static/js/index' + suffix + '.js')
+				if chartScript !== false
+					script(src='http://code.highcharts.com/modules/exporting.js')
