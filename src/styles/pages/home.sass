@@ -85,7 +85,7 @@
   background: #fff
   border: 1px solid #d8d8d8
   &_entry-page
-    margin: -170px auto 0
+    margin: -172px auto 0
   &__inner
     +clr
   &__block
@@ -241,7 +241,7 @@
         right: -450px
         
 .system
-  padding: 22px 0 48px
+  padding: 50px 0
   min-height: 736px
   &__container
     position: relative
@@ -254,9 +254,9 @@
     width: 33.33333%
     text-align: center
     &.is-visible
-      z-index: 310
-    &.js-system-popup
-      cursor: pointer
+      z-index: 331
+      .system__item-title
+        color: #fff
     &-title
       position: relative
       margin-bottom: 25px
@@ -265,19 +265,22 @@
       font-size: 16px
       line-height: 22px
       transition: .5s ease
-      
+    &-img-wrap
+      position: relative
     &-img
       position: relative
-      img
-        position: relative
+      pointer-events: none
     &_data
-      img
+      .system__item-img
         top: -6px
         left: 19px
       .system__item-title
         left: 12px
     &_cloud
-      img
+      position: relative
+      cursor: pointer
+      min-height: 260px
+      .system__item-img
         position: absolute
         min-width: 501px
         top: 1px
@@ -285,7 +288,7 @@
       .system__item-title
         left: -5px
     &_portfolio
-      img
+      .system__item-img
         position: absolute
         min-width: 428px
         top: -5px
@@ -295,15 +298,15 @@
         
     &_internet
       margin-top: 118px
-      img
+      .system__item-img
         position: absolute
         left: 35px
-        
   &__arrows
+    pointer-events: none
     position: absolute
     top: 28.7%
-    z-index: 307
     fill: #98acba
+    z-index: 1
     &_1
       left: 32.7%
     &_2
@@ -312,50 +315,42 @@
       top: 74%
       left: 48.2%
       transform: rotate(90deg)
-    
-.popup-opened
-  .system__item
-    pointer-events: none
-  .system__item-title
-    color: #fff
-    
-.system-slider
-  max-width: 730px
-  margin: 0 auto
-  display: none
-  &.slick-initialized
-    display: block
-  .slider-arr
-    top: 66%
-    margin-top: -13px
-    z-index: 3
-    &:hover svg
-      fill: $blue
-    &_prev
-      left: 17.5%
-    &_next
-      right: 17.5%
-    svg
-      fill: #fff
-      +trs
-    &.slick-disabled svg
-      fill: #fff
+    .is-hidden &
+      z-index: 331
+  &__tip-zone
+    +coverdiv
+    z-index: 100
+    &.is-active .system-popup
+      opacity: 1
+      visibility: visible
+      pointer-events: auto
+      transform: translate3d(0, 0, 0)
+
+.system-popup
+  opacity: 0
+  visibility: hidden
+  pointer-events: none
+  position: absolute
+  bottom: 100%
+  left: 50%
+  z-index: 350
+  display: flex
+  align-items: flex-start
+  width: 684px
+  height: 300px
+  padding: 50px 0 0
+  margin-left: -342px
+  transform: translate3d(0, 100px, 0)
+  transition: .5s ease
+  cursor: default
   &__item
-    pointer-events: none
     text-align: center
-    transition: all 0.3s ease-in-out
     cursor: pointer
     z-index: 3
-    transform: scale(0.74) translate(90%, 0)
-    +md
-      padding: 30px
-    +xs
-      transform: none
-      padding: 25px 15px
-    &.slick-current
-      pointer-events: auto
-      .no-touch &:hover .system-slider__item-img::before
-        opacity: 1
+    transform: scale(0.74) translate(55%, 0)
+    .no-touch &:hover .icon-plus,
+    .no-touch &:hover .system-popup__item-img::before
+      opacity: 1
     &-img
       display: block
       position: relative
@@ -383,25 +378,14 @@
         opacity: 0
         transition: opacity .3s ease
   
-  .slick-track
-    display: flex
-    align-items: center
-  .slick-list
-    position: relative
-    display: flex
-    flex-direction: column
-    justify-content: flex-end
-    height: 330px
-  &__item.slick-center
+  &__item_center
     transform: scale(1) translate3d(0, 0, 0)
     cursor: default
-  &__item.slick-center
+  &__item_center
     z-index: 3
-  &__item.slick-center + &__item
-    transform: scale(0.74) translate(-90%, 0)
+  &__item_center + &__item
+    transform: scale(0.74) translate(-55%, 0)
     z-index: 2
-    +xs
-      transform: none
   &__tooltip
     pointer-events: none
     opacity: 0
@@ -429,13 +413,6 @@
       position: absolute
       top: 100%
       left: -12px
-    
-  &__item.slick-current
-    .no-touch &:hover .icon-plus
-      opacity: 1
-    
-  &__item.slick-current &__tooltip
-    opacity: 1
     
 .tezis
   padding: 145px 0 150px
@@ -1072,3 +1049,14 @@
     display: block
     width: 100%
     margin: 0 auto
+    
+.entry-slider
+  display: none
+  max-width: 1138px
+  margin: -172px auto 0
+  padding: 19px
+  background: #f3f3f3
+  &.slick-initialized
+    display: block
+  &__item
+    +cover-img

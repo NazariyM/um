@@ -1,3 +1,5 @@
+if header ?  header : header = []
+
 // begin header
 +b.HEADER.header
   +e.top.container
@@ -79,12 +81,12 @@
 
       +b.NAV.nav.header__nav
         +e.UL.list
-          li.is-active: a(href='home.html') Home
-          li: a(href='contacts.html') About us
-          li: a(href='private-investor.html') Private investors
-          li: a(href='institutional-investors.html') Institutional investors
-          li: a(href='market-research.html') Market research
-          li: a(href='https://www.paypal.com/cgi-bin/webscr?business=dada@postventus.com&cmd=_xclick-subscriptions&item_name=Base%20Subscription&item_number=base&currency_code=USD&a3=300&p3=1&t3=M&no_shipping=1&no_note=1&rm=2&src=1&notify_url=http://undercovermarket.com/subscriptions.subscr_confirm&return=http://undercovermarket.com/subscriptions.subscr_confirm&cancel_return=http://undercovermarket.com/&Z3JncnB0=' target='_blank') Get access
+          li(class=navActiveLink1 ? 'is-active' : ''): a(href='home.html') Home
+          li(class=navActiveLink2 ? 'is-active' : ''): a(href='contacts.html') About us
+          li(class=navActiveLink3 ? 'is-active' : ''): a(href='private-investors.html') Private investors
+          li(class=navActiveLink4 ? 'is-active' : ''): a(href='institutional-investors.html') Institutional investors
+          li(class=navActiveLink5 ? 'is-active' : ''): a(href='market-research.html') Market research
+          li(class=navActiveLink6 ? 'is-active' : ''): a(href='https://www.paypal.com/cgi-bin/webscr?business=dada@postventus.com&cmd=_xclick-subscriptions&item_name=Base%20Subscription&item_number=base&currency_code=USD&a3=300&p3=1&t3=M&no_shipping=1&no_note=1&rm=2&src=1&notify_url=http://undercovermarket.com/subscriptions.subscr_confirm&return=http://undercovermarket.com/subscriptions.subscr_confirm&cancel_return=http://undercovermarket.com/&Z3JncnB0=' target='_blank') Technology solutions
 
       +e.BUTTON.login(data-popup-target='login-popup' type='button')
         svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='16', height='22', viewbox='0 0 16 22')

@@ -6,6 +6,7 @@ import { initSliders } from './initSliders';
 import './initMap';
 import { initCharts } from './initCharts';
 import { initPopups } from './initPopups';
+import Tooltip from './showTooltip';
 
 /**
  * Website's common scripts (example).
@@ -28,15 +29,3 @@ $('[data-fancybox]').fancybox();
 
 /** Export initialized common scripts by default */
 export default Common.init();
-
-const $scheduleIcon = $('.schedule__item-icon');
-
-$scheduleIcon.on('mouseenter', function () {
-  $(this).addClass('is-active');
-  $('body').addClass('is-shadow');
-});
-
-$scheduleIcon.on('mouseleave', function () {
-  $(this).removeClass('is-active');
-  $('body').removeClass('is-shadow');
-});

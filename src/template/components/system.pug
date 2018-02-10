@@ -2,24 +2,90 @@ if system ? system : system = []
 
 //begin system
 +b.SECTION.system(class= system.classMod ? system.classMod : '')
-	+e.BUTTON.popup-instance(type='button' data-popup-target='system-popup')
 	+e.container.container
 		+e.item._data
 			+e.H3.item-title Market data
-			+e.item-img
-				+e.IMG(src='static/img/icons/market-data.png' alt='image')
-		+e.item._cloud.js-system-popup
+			+e.item-img-wrap
+				+e.IMG.item-img(src='static/img/icons/market-data.png' alt='image')
+		+e.item._cloud
+			+e.tip-zone.js-show-tooltip
+				+b.system-popup
+					+e.item
+						+e.A.item-img(href='http://static4.businessinsider.com/image/58f4f370f40dae1c008b4c85/28-hot-cars-at-the-2017-new-york-auto-show.jpg' data-fancybox="gallery")
+							+e.IMG(src='static/img/content/system_img.png' alt='image')
+							.icon-plus
+
+						+e.tooltip
+							+e.tooltip-title Lorem Ipsum
+							+e.P это текст-"рыба", часто используемый
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='89', height='49', viewbox='0 0 89 49')
+								defs
+									path#gxgva(d='M1034 512v-1h71v1z')
+									path#gxgvb(d='M1024.36 551.35l-.72-.7 39-40 .72.7z')
+									path#gxgvc(d='M1025.5 540a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19z')
+								g
+									g(transform='translate(-1016 -510)')
+										use(fill='#dee2ef', xlink:href='#gxgva')
+									g(transform='translate(-1016 -510)')
+										use(fill='#dee2ef', xlink:href='#gxgvb')
+									g(transform='translate(-1016 -510)')
+										use(fill='#0094f8', xlink:href='#gxgvc')
+
+					+e.item._center
+						+e.A.item-img(href='http://static4.businessinsider.com/image/58f4f370f40dae1c008b4c85/28-hot-cars-at-the-2017-new-york-auto-show.jpg' data-fancybox="gallery")
+							+e.IMG(src='http://www.rifemagazine.co.uk/wp-content/uploads/2016/03/Wolf-of-Wall-Street.jpg' alt='image')
+							.icon-plus
+
+						+e.tooltip
+							+e.tooltip-title Lorem Ipsum
+							+e.P это текст-"рыба", часто используемый
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='89', height='49', viewbox='0 0 89 49')
+								defs
+									path#gxgva(d='M1034 512v-1h71v1z')
+									path#gxgvb(d='M1024.36 551.35l-.72-.7 39-40 .72.7z')
+									path#gxgvc(d='M1025.5 540a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19z')
+								g
+									g(transform='translate(-1016 -510)')
+										use(fill='#dee2ef', xlink:href='#gxgva')
+									g(transform='translate(-1016 -510)')
+										use(fill='#dee2ef', xlink:href='#gxgvb')
+									g(transform='translate(-1016 -510)')
+										use(fill='#0094f8', xlink:href='#gxgvc')
+
+					+e.item
+						+e.A.item-img(href='http://static4.businessinsider.com/image/58f4f370f40dae1c008b4c85/28-hot-cars-at-the-2017-new-york-auto-show.jpg' data-fancybox="gallery")
+							+e.IMG(src='static/img/content/system_img.png' alt='image')
+							.icon-plus
+
+						+e.tooltip
+							+e.tooltip-title Lorem Ipsum
+							+e.P это текст-"рыба", часто используемый
+							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='89', height='49', viewbox='0 0 89 49')
+								defs
+									path#gxgva(d='M1034 512v-1h71v1z')
+									path#gxgvb(d='M1024.36 551.35l-.72-.7 39-40 .72.7z')
+									path#gxgvc(d='M1025.5 540a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19z')
+								g
+									g(transform='translate(-1016 -510)')
+										use(fill='#dee2ef', xlink:href='#gxgva')
+									g(transform='translate(-1016 -510)')
+										use(fill='#dee2ef', xlink:href='#gxgvb')
+									g(transform='translate(-1016 -510)')
+										use(fill='#0094f8', xlink:href='#gxgvc')
+
+
 			+e.H3.item-title Processing cloud
-			+e.item-img
-				+e.IMG(src='static/img/icons/processing-cloud.png' alt='image')
+			+e.item-img-wrap
+				+e.IMG.item-img(src='static/img/icons/processing-cloud.png' alt='image')
+
 		+e.item._portfolio
 			+e.H3.item-title Portfolio
-			+e.item-img
-				+e.IMG(src='static/img/icons/portfolio.png' alt='image')
+			+e.item-img-wrap
+				+e.IMG.item-img(src='static/img/icons/portfolio.png' alt='image')
 		+e.item._internet
 			+e.H3.item-title Internet
-			+e.item-img
-				+e.IMG(src='static/img/icons/internet.png' alt='image')
+			+e.item-img-wrap
+				+e.IMG.item-img(src='static/img/icons/internet.png' alt='image')
 
 		+e.SVG.arrows._1(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='41', height='28', viewbox='0 0 41 28')
 			defs
@@ -62,51 +128,3 @@ if system ? system : system = []
 						use(xlink:href='#t0vbb')
 					g
 						use(xlink:href='#t0vbc')
-
-	+b.popup(data-popup-id='system-popup', tabindex='-1', role='dialog')
-		+e.container._top
-			+b.system-slider.js-system-slider
-				-i = 0
-				while i < 3
-					+e.item
-						+e.A.item-img(href='http://static4.businessinsider.com/image/58f4f370f40dae1c008b4c85/28-hot-cars-at-the-2017-new-york-auto-show.jpg' data-fancybox="gallery")
-							+e.IMG(src='static/img/content/system_img.png' alt='image')
-							.icon-plus
-
-						+e.tooltip
-							+e.tooltip-title Lorem Ipsum
-							+e.P это текст-"рыба", часто используемый
-							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='89', height='49', viewbox='0 0 89 49')
-								defs
-									path#gxgva(d='M1034 512v-1h71v1z')
-									path#gxgvb(d='M1024.36 551.35l-.72-.7 39-40 .72.7z')
-									path#gxgvc(d='M1025.5 540a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19z')
-								g
-									g(transform='translate(-1016 -510)')
-										use(fill='#dee2ef', xlink:href='#gxgva')
-									g(transform='translate(-1016 -510)')
-										use(fill='#dee2ef', xlink:href='#gxgvb')
-									g(transform='translate(-1016 -510)')
-										use(fill='#0094f8', xlink:href='#gxgvc')
-
-					+e.item
-						+e.A.item-img(href='http://static4.businessinsider.com/image/58f4f370f40dae1c008b4c85/28-hot-cars-at-the-2017-new-york-auto-show.jpg' data-fancybox="gallery")
-							+e.IMG(src='http://www.rifemagazine.co.uk/wp-content/uploads/2016/03/Wolf-of-Wall-Street.jpg' alt='image')
-							.icon-plus
-
-						+e.tooltip
-							+e.tooltip-title Lorem Ipsum
-							+e.P это текст-"рыба", часто используемый
-							svg(xmlns='http://www.w3.org/2000/svg', xmlns:xlink='http://www.w3.org/1999/xlink', width='89', height='49', viewbox='0 0 89 49')
-								defs
-									path#gxgva(d='M1034 512v-1h71v1z')
-									path#gxgvb(d='M1024.36 551.35l-.72-.7 39-40 .72.7z')
-									path#gxgvc(d='M1025.5 540a9.5 9.5 0 1 1 0 19 9.5 9.5 0 0 1 0-19z')
-								g
-									g(transform='translate(-1016 -510)')
-										use(fill='#dee2ef', xlink:href='#gxgva')
-									g(transform='translate(-1016 -510)')
-										use(fill='#dee2ef', xlink:href='#gxgvb')
-									g(transform='translate(-1016 -510)')
-										use(fill='#0094f8', xlink:href='#gxgvc')
-					-i++

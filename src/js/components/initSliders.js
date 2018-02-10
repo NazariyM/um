@@ -68,35 +68,15 @@ export function initSliders() {
     nextArrow: nextArr
   }));
 
-  const $systemSld = $('.js-system-slider');
+  const $entrySld = $('.js-entry-slider');
 
-  $systemSld.slick({
-    centerMode: true,
-    focusOnSelect: true,
-    useTransform: true,
-    centerPadding: '25%',
-    cssEase: 'ease-in-out',
-    variableHeight: true,
+  $entrySld.slick($.extend({}, defaultOptions, {
     slidesToShow: 1,
     slidesToScroll: 1,
-    dots: false,
-    arrows: true,
-    rows: 0,
-    infinite: false,
-    accessibility: false,
-    prevArrow: prevArr,
-    nextArrow: nextArr,
-    responsive: [{
-      breakpoint: 767,
-      settings: {
-        centerMode: false,
-        centerPadding: 0
-      }
-    }]
-  });
-
-  const activeIndex = 1;
-  if (activeIndex !== false) {
-    $systemSld.slick('slickGoTo', activeIndex, false);
-  }
+    speed: 500,
+    arrows: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 2500
+  }));
 }

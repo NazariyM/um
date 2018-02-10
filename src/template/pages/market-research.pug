@@ -2,14 +2,18 @@ extends ../extend/default
 
 block variables
 	-title = 'Market research';
+	-navActiveLink5 = true;
 
 block main
 
-	-page = {title: 'Market research'}
+	-page = {title: 'Market research', bg: 'background-image: url(static/img/bg/market_bg.png)'}
 	include ../components/page
 
-	-chart = {classMod: '_entry-page'}
-	include ../components/chart
+	+b.entry-slider.js-entry-slider
+		+e.item
+			+e.IMG(src='static/img/content/entry-sld_1.png' alt='image')
+		+e.item
+			+e.IMG(src='static/img/content/entry-sld_2.png' alt='image')
 
 	include ../components/result
 
